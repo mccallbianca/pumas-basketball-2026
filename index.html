@@ -1,0 +1,1887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maria Carrillo Women's Basketball — Summer 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* =============================================
+   DESIGN SYSTEM — CASHLETIC STANDARD
+   Maria Carrillo Pumas: Forest Green + Gold
+   ============================================= */
+:root {
+  --ink:        #080e0a;
+  --green-deep: #0f2b18;
+  --green:      #1a4d2e;
+  --green-mid:  #256138;
+  --green-soft: #3a7d4e;
+  --gold:       #c8941a;
+  --gold-vivid: #e8a820;
+  --gold-light: #f5c84a;
+  --cream:      #f5f0e8;
+  --white:      #ffffff;
+  --mist:       #e8ede9;
+  --stone:      #8a9490;
+  --court-line: rgba(200,148,26,0.18);
+  --radius:     10px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: 'Barlow', sans-serif;
+  background: var(--ink);
+  color: var(--cream);
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 0 32px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(8,14,10,0.88);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(200,148,26,0.2);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.nav-puma {
+  width: 36px; height: 36px;
+  background: var(--green);
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.nav-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1.2;
+}
+.nav-name small {
+  display: block;
+  font-weight: 400;
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 0.14em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+.nav-links a:hover { color: var(--gold-light); background: rgba(255,255,255,0.05); }
+.nav-cta-btn {
+  background: var(--gold) !important;
+  color: var(--ink) !important;
+  padding: 8px 20px !important;
+  border-radius: 6px !important;
+  font-weight: 700 !important;
+}
+.nav-cta-btn:hover { background: var(--gold-vivid) !important; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 120px 24px 80px;
+  text-align: center;
+}
+
+/* animated court lines */
+.court-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.court-bg svg {
+  width: 100%; height: 100%;
+  opacity: 0.07;
+}
+
+.hero-glow {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 600px;
+  background: radial-gradient(ellipse, rgba(26,77,46,0.55) 0%, transparent 65%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-content { position: relative; z-index: 2; max-width: 960px; }
+
+.hero-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(200,148,26,0.4);
+  background: rgba(26,77,46,0.35);
+  backdrop-filter: blur(8px);
+  padding: 7px 20px;
+  border-radius: 100px;
+  margin-bottom: 36px;
+  animation: fadeUp 0.5s ease both 0.1s;
+}
+.hero-flag span {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+.hero-flag .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gold-vivid);
+  animation: pulse 2s ease infinite;
+}
+
+.hero-school {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: clamp(18px, 3vw, 28px);
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 6px;
+  animation: fadeUp 0.5s ease both 0.25s;
+}
+
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(80px, 15vw, 180px);
+  line-height: 0.85;
+  letter-spacing: 0.025em;
+  color: var(--white);
+  animation: fadeUp 0.6s ease both 0.4s;
+}
+.hero-title .accent { color: var(--gold-vivid); }
+.hero-title .stroke {
+  -webkit-text-stroke: 2px var(--gold);
+  color: transparent;
+}
+
+.hero-sub {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(16px, 3vw, 24px);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-top: 10px;
+  margin-bottom: 48px;
+  animation: fadeUp 0.5s ease both 0.55s;
+}
+
+.hero-pills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 52px;
+  animation: fadeUp 0.5s ease both 0.7s;
+}
+.pill {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 7px 16px;
+  border-radius: 100px;
+  border: 1px solid rgba(255,255,255,0.14);
+  color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.04);
+}
+.pill.gold-pill {
+  border-color: rgba(200,148,26,0.45);
+  color: var(--gold-light);
+  background: rgba(200,148,26,0.1);
+}
+
+.hero-cta-row {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.5s ease both 0.85s;
+}
+
+.btn-gold {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--ink);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  padding: 16px 52px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.22s ease;
+  box-shadow: 0 8px 36px rgba(200,148,26,0.3);
+}
+.btn-gold:hover { background: var(--gold-vivid); transform: translateY(-2px); box-shadow: 0 14px 48px rgba(200,148,26,0.45); }
+
+.btn-ghost {
+  display: inline-block;
+  background: transparent;
+  color: var(--white);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 16px 32px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.25);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.22s ease;
+}
+.btn-ghost:hover { border-color: rgba(255,255,255,0.55); background: rgba(255,255,255,0.06); }
+
+.scroll-down {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255,255,255,0.25);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  animation: bounce 2.5s ease infinite;
+}
+.scroll-down::after { content: '↓'; font-size: 20px; }
+
+/* ── SECTION PRIMITIVES ── */
+.section { padding: 100px 24px; }
+.container { max-width: 1040px; margin: 0 auto; }
+
+.eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(48px, 7vw, 82px);
+  line-height: 0.92;
+  letter-spacing: 0.02em;
+  margin-bottom: 48px;
+}
+.section-title .em { color: var(--gold-vivid); }
+
+/* ── COACH SECTION ── */
+.coach-section {
+  background: var(--green-deep);
+  position: relative;
+  overflow: hidden;
+}
+.coach-section::before {
+  content: '';
+  position: absolute;
+  top: 0; right: -200px;
+  width: 700px; height: 100%;
+  background: radial-gradient(ellipse at right, rgba(200,148,26,0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.coach-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.coach-quote-block {
+  position: relative;
+  padding-left: 28px;
+  border-left: 3px solid var(--gold);
+  margin: 32px 0;
+}
+.coach-quote-block blockquote {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: clamp(18px, 2.2vw, 24px);
+  line-height: 1.55;
+  color: rgba(255,255,255,0.8);
+}
+.coach-quote-block cite {
+  display: block;
+  margin-top: 12px;
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.coach-body p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 16px;
+}
+.coach-body p strong { color: var(--white); }
+
+.cred-stack { display: flex; flex-direction: column; gap: 12px; }
+.cred-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius);
+  transition: background 0.2s;
+}
+.cred-item:hover { background: rgba(255,255,255,0.07); }
+.cred-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 38px;
+  line-height: 1;
+  color: var(--gold-vivid);
+  min-width: 64px;
+  text-align: right;
+}
+.cred-text strong {
+  display: block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+.cred-text span { font-size: 13px; color: var(--stone); }
+
+/* ── PROGRAM OVERVIEW / SUMMER AT A GLANCE ── */
+.programs-section {
+  background: var(--ink);
+  position: relative;
+}
+
+/* diagonal stripe accent */
+.programs-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.program-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.prog-card {
+  background: var(--green-deep);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px;
+  padding: 36px 30px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.prog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+.prog-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.prog-card:hover::after { transform: scaleX(1); }
+
+.prog-icon {
+  font-size: 36px;
+  margin-bottom: 20px;
+  display: block;
+}
+.prog-card h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+.prog-when {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.prog-when::before {
+  content: '';
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--gold-vivid);
+  flex-shrink: 0;
+}
+.prog-card p { font-size: 14px; line-height: 1.7; color: var(--stone); }
+.prog-card p strong { color: rgba(255,255,255,0.8); }
+
+/* ── SCHEDULE / CALENDAR ── */
+.schedule-section {
+  background: var(--green-deep);
+  position: relative;
+  overflow: hidden;
+}
+.schedule-section::after {
+  content: 'SCHEDULE';
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 180px;
+  color: rgba(255,255,255,0.02);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.month-block { margin-bottom: 56px; }
+.month-block:last-child { margin-bottom: 0; }
+
+.month-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.month-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(200,148,26,0.2);
+}
+
+.event-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  margin-bottom: 10px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: background 0.18s;
+}
+.event-row:hover { background: rgba(255,255,255,0.055); }
+
+.event-date {
+  min-width: 86px;
+  background: var(--green);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 12px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.event-date .day-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+.event-date .day-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 34px;
+  line-height: 1;
+  color: var(--white);
+}
+.event-date .day-range {
+  font-size: 10px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 2px;
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 0.06em;
+}
+
+.event-body {
+  flex: 1;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.event-body h4 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 3px;
+}
+.event-body p { font-size: 13px; color: var(--stone); line-height: 1.5; }
+.event-body p strong { color: rgba(255,255,255,0.75); }
+
+.event-tag {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 100px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tag-clinic    { background: rgba(26,77,46,0.7); border: 1px solid var(--green-soft); color: #7ecfa0; }
+.tag-league    { background: rgba(42,97,64,0.5); border: 1px solid rgba(42,97,64,0.8); color: #a8e4c0; }
+.tag-weights   { background: rgba(200,148,26,0.12); border: 1px solid rgba(200,148,26,0.3); color: var(--gold-light); }
+.tag-chico     { background: rgba(100,20,30,0.5); border: 1px solid rgba(160,40,60,0.6); color: #f5a0a8; }
+.tag-tba       { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); color: var(--stone); }
+
+/* recurring rows */
+.recurring-block {
+  background: rgba(26,77,46,0.2);
+  border: 1px solid rgba(26,77,46,0.5);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.recur-icon { font-size: 26px; flex-shrink: 0; }
+.recur-body { flex: 1; }
+.recur-body strong {
+  display: block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 3px;
+}
+.recur-body span { font-size: 13px; color: var(--stone); }
+.recur-when {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(200,148,26,0.1);
+  padding: 6px 14px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.schedule-note {
+  background: rgba(200,148,26,0.08);
+  border: 1px solid rgba(200,148,26,0.25);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.65;
+  margin-top: 20px;
+}
+.schedule-note strong { color: var(--gold-light); }
+
+/* ── CHICO STATE TOURNAMENT ── */
+.chico-section {
+  background: #120a0c;
+  position: relative;
+  overflow: hidden;
+}
+.chico-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 40%, rgba(160,40,60,0.18) 0%, transparent 55%),
+              radial-gradient(ellipse at 80% 70%, rgba(200,148,26,0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.chico-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.chico-headline {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(52px, 8vw, 96px);
+  line-height: 0.88;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+.chico-headline .chico-em { color: #e05060; }
+
+.chico-desc {
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 32px;
+}
+.chico-desc strong { color: var(--white); }
+
+.chico-fee-callout {
+  background: rgba(200,148,26,0.12);
+  border: 1px solid rgba(200,148,26,0.3);
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-bottom: 28px;
+}
+.chico-fee-callout .fee-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.chico-fee-callout .fee-val {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 56px;
+  line-height: 1;
+  color: var(--gold-vivid);
+}
+.chico-fee-callout .fee-sub {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+.chico-details-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.chico-card-header {
+  background: rgba(160,40,60,0.3);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 18px 24px;
+}
+.chico-card-header h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  color: var(--white);
+}
+.chico-card-header p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  margin-top: 2px;
+}
+
+.chico-detail-list { list-style: none; }
+.chico-detail-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-size: 14px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.5;
+}
+.chico-detail-list li:last-child { border-bottom: none; }
+.chico-detail-list li .li-icon { font-size: 17px; flex-shrink: 0; margin-top: 1px; }
+.chico-detail-list li strong { color: var(--white); display: block; font-size: 13px; margin-bottom: 2px; }
+
+.chico-contact-box {
+  margin-top: 20px;
+  padding: 18px 24px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius);
+}
+.chico-contact-box h4 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 10px;
+}
+.chico-contact-box a { color: var(--gold-light); text-decoration: none; }
+.chico-contact-box a:hover { text-decoration: underline; }
+.chico-contact-box p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+
+.chico-warning {
+  margin-top: 24px;
+  padding: 14px 20px;
+  background: rgba(200,60,40,0.1);
+  border: 1px solid rgba(200,60,40,0.3);
+  border-radius: var(--radius);
+  font-size: 13px;
+  color: rgba(255,200,180,0.8);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* ── EQUIPMENT / REQUIREMENTS ── */
+.requirements-section { background: var(--ink); }
+
+.req-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.req-card {
+  background: var(--green-deep);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  padding: 30px;
+}
+.req-card h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.req-card ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.req-card ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.65);
+}
+.req-card ul li::before {
+  content: '→';
+  color: var(--gold);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.req-card ul li strong { color: var(--white); }
+
+.philosophy-banner {
+  grid-column: 1 / -1;
+  background: var(--green);
+  border-radius: 12px;
+  padding: 36px 40px;
+  position: relative;
+  overflow: hidden;
+}
+.philosophy-banner::before {
+  content: '"';
+  position: absolute;
+  right: 20px;
+  top: -20px;
+  font-family: 'DM Serif Display', serif;
+  font-size: 220px;
+  color: rgba(255,255,255,0.05);
+  line-height: 1;
+  pointer-events: none;
+}
+.philosophy-banner blockquote {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: clamp(18px, 2.5vw, 26px);
+  line-height: 1.55;
+  color: var(--white);
+  max-width: 780px;
+}
+.philosophy-banner cite {
+  display: block;
+  margin-top: 16px;
+  font-style: normal;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+/* ── REGISTRATION ── */
+.register-section {
+  background: var(--green-deep);
+  position: relative;
+  overflow: hidden;
+}
+.register-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 30%, rgba(200,148,26,0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.form-shell {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 52px 52px 48px;
+}
+
+.form-block { margin-bottom: 40px; }
+.form-block:last-child { margin-bottom: 0; }
+
+.form-block-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  letter-spacing: 0.06em;
+  color: var(--gold-vivid);
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(200,148,26,0.2);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fg { display: flex; flex-direction: column; gap: 6px; }
+.fg label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.fg input,
+.fg select,
+.fg textarea {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 15px;
+  color: var(--white);
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  width: 100%;
+  -webkit-appearance: none;
+}
+.fg input::placeholder,
+.fg textarea::placeholder { color: rgba(255,255,255,0.2); }
+.fg input:focus,
+.fg select:focus,
+.fg textarea:focus {
+  border-color: var(--gold);
+  background: rgba(255,255,255,0.08);
+}
+.fg select option { background: #0f2b18; color: var(--white); }
+
+.form-row {
+  display: grid;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+.form-row.cols-2 { grid-template-columns: 1fr 1fr; }
+.form-row.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.form-row.cols-1 { grid-template-columns: 1fr; }
+
+.fee-tier-selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.fee-tier {
+  border: 2px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 20px 22px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+.fee-tier:hover { border-color: rgba(200,148,26,0.4); }
+.fee-tier.selected { border-color: var(--gold); background: rgba(200,148,26,0.08); }
+.fee-tier input[type="radio"] { display: none; }
+.fee-tier .tier-amt {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 44px;
+  line-height: 1;
+  color: var(--gold-vivid);
+}
+.fee-tier .tier-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.fee-tier .tier-desc { font-size: 12px; color: var(--stone); line-height: 1.5; }
+.fee-tier .selected-check {
+  position: absolute;
+  top: 12px; right: 12px;
+  width: 20px; height: 20px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: var(--ink);
+}
+.fee-tier.selected .selected-check { display: flex; }
+
+.radio-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 14px 0;
+}
+.radio-row p {
+  flex: 1;
+  min-width: 200px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.5;
+}
+.r-grp { display: flex; gap: 18px; }
+.r-lbl {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--white);
+}
+.r-lbl input { accent-color: var(--gold); }
+
+.waiver-block {
+  background: rgba(200,148,26,0.06);
+  border: 1px solid rgba(200,148,26,0.2);
+  border-radius: 10px;
+  padding: 22px 26px;
+  margin-bottom: 18px;
+}
+.waiver-block p {
+  font-size: 13px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 16px;
+}
+.check-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+}
+.check-row input { accent-color: var(--gold); margin-top: 2px; flex-shrink: 0; }
+.check-row span { font-size: 14px; font-weight: 600; color: var(--gold-light); line-height: 1.5; }
+
+.zelle-box {
+  background: rgba(26,77,46,0.3);
+  border: 1px solid rgba(26,77,46,0.7);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 18px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.zelle-box .zelle-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.zelle-box h4 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 4px;
+}
+.zelle-box p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6; }
+.zelle-box p strong { color: var(--white); }
+
+.submit-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-top: 8px;
+}
+.submit-note { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.65; }
+.submit-note a { color: var(--gold-light); text-decoration: none; }
+
+.btn-submit {
+  background: var(--gold);
+  color: var(--ink);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.1em;
+  padding: 17px 56px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: all 0.22s;
+  box-shadow: 0 6px 28px rgba(200,148,26,0.3);
+}
+.btn-submit:hover { background: var(--gold-vivid); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(200,148,26,0.45); }
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--ink);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 48px 24px 32px;
+}
+.footer-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.footer-brand .footer-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  letter-spacing: 0.06em;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.footer-brand p { font-size: 13px; color: var(--stone); line-height: 1.65; }
+.footer-contact h4 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.footer-contact p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.75; }
+.footer-contact a { color: var(--gold-light); text-decoration: none; }
+.footer-bottom {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255,255,255,0.2);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(7px); }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 860px) {
+  .coach-grid,
+  .chico-grid { grid-template-columns: 1fr; gap: 48px; }
+  .program-cards { grid-template-columns: 1fr; }
+  .req-grid { grid-template-columns: 1fr; }
+  .form-row.cols-2,
+  .form-row.cols-3 { grid-template-columns: 1fr; }
+  .fee-tier-selector { grid-template-columns: 1fr; }
+  .form-shell { padding: 28px 20px; }
+  .nav-links { display: none; }
+  .philosophy-banner { padding: 24px 24px; }
+  .hero-title { font-size: clamp(64px, 18vw, 130px); }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav>
+  <a href="#top" class="nav-brand">
+    <div class="nav-puma">🐾</div>
+    <div class="nav-name">
+      Coach McCall
+      <small>Pumas Basketball · Summer 2026</small>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">Coach</a></li>
+    <li><a href="#programs">Program</a></li>
+    <li><a href="#schedule">Schedule</a></li>
+    <li><a href="#chico">Chico Tournament</a></li>
+    <li><a href="#register" class="nav-cta-btn">Register</a></li>
+  </ul>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="court-bg">
+    <svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <!-- Full court outline -->
+      <rect x="120" y="80" width="1200" height="740" fill="none" stroke="#c8941a" stroke-width="3"/>
+      <!-- Half court line -->
+      <line x1="720" y1="80" x2="720" y2="820" stroke="#c8941a" stroke-width="2"/>
+      <!-- Center circle -->
+      <circle cx="720" cy="450" r="90" fill="none" stroke="#c8941a" stroke-width="2"/>
+      <circle cx="720" cy="450" r="8" fill="#c8941a"/>
+      <!-- Left key -->
+      <rect x="120" y="330" width="190" height="240" fill="none" stroke="#c8941a" stroke-width="2"/>
+      <semicircle/>
+      <path d="M310,330 A120,120 0 0,1 310,570" fill="none" stroke="#c8941a" stroke-width="2"/>
+      <!-- Right key -->
+      <rect x="1130" y="330" width="190" height="240" fill="none" stroke="#c8941a" stroke-width="2"/>
+      <path d="M1130,330 A120,120 0 0,0 1130,570" fill="none" stroke="#c8941a" stroke-width="2"/>
+      <!-- Three-point arcs -->
+      <path d="M120,250 A360,360 0 0,1 120,650" fill="none" stroke="#c8941a" stroke-width="1.5" stroke-dasharray="6,4"/>
+      <path d="M1320,250 A360,360 0 0,0 1320,650" fill="none" stroke="#c8941a" stroke-width="1.5" stroke-dasharray="6,4"/>
+      <!-- Corner lines -->
+      <line x1="120" y1="250" x2="300" y2="250" stroke="#c8941a" stroke-width="1.5"/>
+      <line x1="120" y1="650" x2="300" y2="650" stroke="#c8941a" stroke-width="1.5"/>
+      <line x1="1320" y1="250" x2="1140" y2="250" stroke="#c8941a" stroke-width="1.5"/>
+      <line x1="1320" y1="650" x2="1140" y2="650" stroke="#c8941a" stroke-width="1.5"/>
+    </svg>
+  </div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-flag">
+      <span class="dot"></span>
+      <span>Maria Carrillo High School · Pumas · Girls Basketball</span>
+    </div>
+    <p class="hero-school">Coach McCall's</p>
+    <h1 class="hero-title">
+      Summer<br>
+      <span class="accent">2026</span>
+    </h1>
+    <p class="hero-sub">Skills · League · Strength · Championships</p>
+    <div class="hero-pills">
+      <span class="pill gold-pill">🏀 Skills Clinic — June 9 to July 9</span>
+      <span class="pill">SRJC Summer League</span>
+      <span class="pill">Chico State Team Camp — June 12–14</span>
+      <span class="pill">JV &amp; Varsity Together</span>
+    </div>
+    <div class="hero-cta-row">
+      <a href="#register" class="btn-gold">Register Now</a>
+      <a href="#schedule" class="btn-ghost">View Full Schedule</a>
+    </div>
+  </div>
+  <div class="scroll-down">Scroll</div>
+</section>
+
+<!-- ===== ABOUT COACH ===== -->
+<section class="section coach-section" id="about">
+  <div class="container">
+    <div class="coach-grid">
+      <div>
+        <p class="eyebrow">Head Coach · Varsity Girls Basketball</p>
+        <h2 class="section-title">Dave<br><span class="em">McCall</span></h2>
+        <div class="coach-body">
+          <p>Coach Dave McCall has been shaping athletes and building programs in Santa Rosa for decades. A <strong>Division I basketball player himself</strong>, he brings the standard of elite competition to every practice, every clinic, and every conversation with his players.</p>
+          <p>Over more than <strong>30 years coaching</strong>, Coach McCall has worked with athletes who have competed at every level — from high school varsity through collegiate and professional play. His philosophy is simple: <em>Carrillo basketball comes first.</em></p>
+        </div>
+        <div class="coach-quote-block">
+          <blockquote>"To compete against the best and play at your best, you have to put in the work individually and build chemistry with your teammates."</blockquote>
+          <cite>— Coach Dave McCall, Head Coach · Varsity Girls Basketball</cite>
+        </div>
+      </div>
+      <div class="cred-stack">
+        <div class="cred-item">
+          <div class="cred-num">D1</div>
+          <div class="cred-text">
+            <strong>Division I Playing Background</strong>
+            <span>Competed collegiately at the highest level in the 1980s</span>
+          </div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-num">30+</div>
+          <div class="cred-text">
+            <strong>Years Coaching</strong>
+            <span>Varsity Girls Basketball at Maria Carrillo High School</span>
+          </div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-num">∞</div>
+          <div class="cred-text">
+            <strong>Athletes Developed</strong>
+            <span>Hundreds of Puma athletes developed from youth through varsity</span>
+          </div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-num">2</div>
+          <div class="cred-text">
+            <strong>Divisions Coached This Summer</strong>
+            <span>JV and Varsity competing together all summer long</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SUMMER PROGRAMS OVERVIEW ===== -->
+<section class="section programs-section" id="programs">
+  <div class="container">
+    <p class="eyebrow">Summer 2026 Programming</p>
+    <h2 class="section-title">Three Ways to<br><span class="em">Compete</span></h2>
+    <div class="program-cards">
+
+      <div class="prog-card">
+        <span class="prog-icon">🏋️</span>
+        <h3>Fundamental Skills Clinic</h3>
+        <p class="prog-when">Tues &amp; Thurs · June 9 – July 9</p>
+        <p>The core of your summer training. <strong>Fundamentals, skill work, strength &amp; conditioning,</strong> and team philosophies — every session, with Coach McCall on the floor. Weight training on select Fridays (schedule TBA).</p>
+      </div>
+
+      <div class="prog-card">
+        <span class="prog-icon">🏟️</span>
+        <h3>SRJC Summer League</h3>
+        <p class="prog-when">Mon &amp; Wed · Starting June</p>
+        <p>Real games against real competition. We run a full league schedule at <strong>Santa Rosa Junior College</strong> — games from 4PM to 8PM. JV and Varsity play together. Schedule will be released by Coach once confirmed.</p>
+      </div>
+
+      <div class="prog-card" style="border-color: rgba(160,40,60,0.4);">
+        <span class="prog-icon">🏆</span>
+        <h3>Chico State Team Camp</h3>
+        <p class="prog-when" style="color:#f5a0a8;">June 12 – 14 · Chico, CA</p>
+        <p>If accepted, the Pumas compete in the <strong>Chico State Women's Basketball 2026 Team Camp</strong> — 6-game guarantee, certified officials, JV &amp; Varsity divisions. Registration fee increases to $350 if accepted. <em>See full details below.</em></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== SCHEDULE ===== -->
+<section class="section schedule-section" id="schedule">
+  <div class="container">
+    <p class="eyebrow">Full Summer Calendar</p>
+    <h2 class="section-title">What the<br><span class="em">Summer Looks Like</span></h2>
+
+    <!-- RECURRING COMMITMENTS -->
+    <div class="month-block">
+      <div class="month-label">Recurring — All Summer</div>
+
+      <div class="recurring-block">
+        <span class="recur-icon">🏀</span>
+        <div class="recur-body">
+          <strong>Fundamental Skills Clinic</strong>
+          <span>Fundamentals · Skill Work · Strength &amp; Conditioning · Team Philosophies — 10:00 AM to 12:00 Noon</span>
+        </div>
+        <div class="recur-when">Tues &amp; Thurs · June 9 – July 9</div>
+      </div>
+
+      <div class="recurring-block">
+        <span class="recur-icon">🏟️</span>
+        <div class="recur-body">
+          <strong>SRJC Summer League</strong>
+          <span>Santa Rosa Junior College — Games 4:00 PM to 8:00 PM · JV &amp; Varsity Together · Full schedule TBA</span>
+        </div>
+        <div class="recur-when">Mon &amp; Wed · Starting June</div>
+      </div>
+
+      <div class="recurring-block">
+        <span class="recur-icon">💪</span>
+        <div class="recur-body">
+          <strong>Friday Weight Training</strong>
+          <span>Strength &amp; conditioning sessions — specific Fridays and location confirmed by Coach McCall</span>
+        </div>
+        <div class="recur-when">Select Fridays · TBA</div>
+      </div>
+    </div>
+
+    <!-- JUNE -->
+    <div class="month-block">
+      <div class="month-label">June 2026</div>
+
+      <div class="event-row">
+        <div class="event-date">
+          <span class="day-name">Mon</span>
+          <span class="day-num">1</span>
+          <span class="day-range">June</span>
+        </div>
+        <div class="event-body">
+          <div>
+            <h4>SRJC League Opens</h4>
+            <p>Summer league begins at Santa Rosa Junior College. <strong>Games 4–8 PM.</strong> First game schedule released by Coach.</p>
+          </div>
+          <span class="event-tag tag-league">League</span>
+        </div>
+      </div>
+
+      <div class="event-row" style="border-color: rgba(160,40,60,0.35);">
+        <div class="event-date" style="background: rgba(160,40,60,0.5);">
+          <span class="day-name">Fri–Sun</span>
+          <span class="day-num">12</span>
+          <span class="day-range">Jun 12–14</span>
+        </div>
+        <div class="event-body">
+          <div>
+            <h4>Chico State Team Camp</h4>
+            <p>CSU Chico · Women's Basketball 2026 Team Camp. <strong>6-game guarantee. JV &amp; Varsity.</strong> Certified officials. If accepted: registration fee is <strong>$350.</strong></p>
+          </div>
+          <span class="event-tag tag-chico">Tournament</span>
+        </div>
+      </div>
+
+      <div class="event-row">
+        <div class="event-date">
+          <span class="day-name">Tues</span>
+          <span class="day-num">9</span>
+          <span class="day-range">June</span>
+        </div>
+        <div class="event-body">
+          <div>
+            <h4>Skills Clinic Opens</h4>
+            <p>First session of the Fundamental Skills Clinic. <strong>10 AM – 12 Noon at Maria Carrillo HS.</strong> Bring your gear.</p>
+          </div>
+          <span class="event-tag tag-clinic">Clinic</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- JULY -->
+    <div class="month-block">
+      <div class="month-label">July 2026</div>
+
+      <div class="event-row">
+        <div class="event-date">
+          <span class="day-name">Thurs</span>
+          <span class="day-num">9</span>
+          <span class="day-range">July</span>
+        </div>
+        <div class="event-body">
+          <div>
+            <h4>Skills Clinic — Final Session</h4>
+            <p>Last day of the Fundamental Skills Clinic. Five weeks of development — finish strong.</p>
+          </div>
+          <span class="event-tag tag-clinic">Clinic</span>
+        </div>
+      </div>
+
+      <div class="event-row">
+        <div class="event-date">
+          <span class="day-name">Mon–Wed</span>
+          <span class="day-num">TBA</span>
+          <span class="day-range">July</span>
+        </div>
+        <div class="event-body">
+          <div>
+            <h4>Additional Tournaments</h4>
+            <p>Coach McCall is actively identifying additional summer tournaments. <strong>Younger players may be invited to select varsity tournaments.</strong> Details announced as confirmed.</p>
+          </div>
+          <span class="event-tag tag-tba">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="schedule-note">
+      <strong>⚠ Note on SRJC League Schedule:</strong> Full game schedule for the Monday/Wednesday SRJC league will be distributed by Coach McCall once finalized. All players should expect games to run <strong>4:00 PM to 8:00 PM</strong> on league days. Stay in contact with Coach for updates. · <strong>Reversible jersey required</strong> for all league and tournament play.
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== CHICO STATE TOURNAMENT ===== -->
+<section class="section chico-section" id="chico">
+  <div class="container" style="position:relative; z-index:1;">
+    <p class="eyebrow" style="color:#f5a0a8;">Featured Tournament</p>
+    <div class="chico-grid">
+      <div>
+        <h2 class="chico-headline">Chico<br>State<br><span class="chico-em">Team Camp</span></h2>
+        <p class="chico-desc">
+          <strong>CSU Chico Women's Basketball</strong> is hosting their 2026 Team Camp on <strong>June 12–14</strong> in Chico, CA. If the Pumas are accepted, this is an elite three-day competition opportunity against high school programs from across Northern California — with certified high school and collegiate officials running every game.
+        </p>
+        <div class="chico-fee-callout">
+          <div class="fee-label">Registration Fee (if accepted)</div>
+          <div class="fee-val">$350</div>
+          <div class="fee-sub">Standard clinic fee is $250. Fee increases to $350 upon acceptance into the Chico State Tournament. · <strong>Team fee to Chico State is $575/team (paid separately by Coach).</strong></div>
+        </div>
+        <div class="chico-warning">
+          <span>⚠️</span>
+          <span><strong>No refunds after May 29, 2026.</strong> All campers must have health insurance coverage and a physical exam within the past year. Waiver forms are required for participation.</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="chico-details-card">
+          <div class="chico-card-header">
+            <h3>2026 Team Camp — Key Details</h3>
+            <p>CSU Chico · Women's Basketball · chicowildcats.com</p>
+          </div>
+          <ul class="chico-detail-list">
+            <li>
+              <span class="li-icon">📅</span>
+              <div><strong>Dates</strong>June 12–14, 2026 (Friday through Sunday)</div>
+            </li>
+            <li>
+              <span class="li-icon">📍</span>
+              <div><strong>Location</strong>CSU Chico Campus · Chico, CA</div>
+            </li>
+            <li>
+              <span class="li-icon">🏀</span>
+              <div><strong>Format</strong>6-game guarantee · JV &amp; Varsity divisions · Certified high school and collegiate officials</div>
+            </li>
+            <li>
+              <span class="li-icon">🏨</span>
+              <div><strong>Housing</strong>Dorms/Housing TBA · <em>Oxford Suites and Hotel Katerina available at discounted rates</em></div>
+            </li>
+            <li>
+              <span class="li-icon">💰</span>
+              <div><strong>Team Fee</strong>$575 per team (paid directly to Chico State Enterprises, separate from player registration fee)</div>
+            </li>
+            <li>
+              <span class="li-icon">🏥</span>
+              <div><strong>Health Requirement</strong>Health insurance coverage + physical exam within past year required for all participants</div>
+            </li>
+            <li>
+              <span class="li-icon">📄</span>
+              <div><strong>Waivers</strong>Signed release form required. Forms emailed to coaches upon registration confirmation.</div>
+            </li>
+          </ul>
+        </div>
+        <div class="chico-contact-box">
+          <h4>Chico State Camp Contact</h4>
+          <p>
+            <strong>Annie Ward</strong><br>
+            <a href="tel:9256582226">925-658-2226</a> &nbsp;·&nbsp; award21@csuchico.edu<br>
+            <a href="https://www.chicowildcats.com" target="_blank" rel="noopener">www.chicowildcats.com</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REQUIREMENTS ===== -->
+<section class="section requirements-section">
+  <div class="container">
+    <p class="eyebrow">What You Need to Know</p>
+    <h2 class="section-title">Before You<br><span class="em">Show Up</span></h2>
+    <div class="req-grid">
+      <div class="req-card">
+        <h3>👗 Equipment Required</h3>
+        <ul>
+          <li><strong>Reversible jersey</strong> — required for all league and tournament games</li>
+          <li>Basketball shoes with proper court grip</li>
+          <li>Water bottle — every session, every day</li>
+          <li>Athletic clothing appropriate for conditioning work</li>
+        </ul>
+      </div>
+      <div class="req-card">
+        <h3>📋 Program Expectations</h3>
+        <ul>
+          <li><strong>Carrillo basketball comes before outside club basketball</strong> — this is the standard</li>
+          <li>JV and Varsity players compete together all summer</li>
+          <li>Younger players may be invited to select varsity tournaments at Coach's discretion</li>
+          <li>Commitment to the full summer program is the expectation</li>
+        </ul>
+      </div>
+      <div class="req-card">
+        <h3>💵 Fees at a Glance</h3>
+        <ul>
+          <li><strong>$250</strong> — Standard summer registration (clinic + league)</li>
+          <li><strong>$350</strong> — Registration fee if accepted to Chico State Tournament</li>
+          <li>Payment via <strong>Zelle® to (707) 696-3816</strong> at time of registration</li>
+          <li>Chico State team fee ($575/team) is handled separately by Coach</li>
+        </ul>
+      </div>
+      <div class="req-card">
+        <h3>🏥 Health &amp; Safety</h3>
+        <ul>
+          <li>Health insurance coverage required for Chico State Tournament</li>
+          <li>Physical exam within past year required for Chico camp participation</li>
+          <li>Inform Coach of any medical conditions at registration</li>
+          <li>Emergency contacts must be on file before first session</li>
+        </ul>
+      </div>
+      <div class="philosophy-banner">
+        <blockquote>"It is going to be a busy summer for our girls' basketball program. The culture we are building is Carrillo basketball comes before outside club basketball. If you plan on being a Lady Baller for the Pumas — put in the work."</blockquote>
+        <cite>— Coach Dave McCall · Head Coach, Varsity Girls Basketball · Maria Carrillo High School</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== REGISTRATION ===== -->
+<section class="section register-section" id="register">
+  <div class="container" style="position:relative; z-index:1;">
+    <p class="eyebrow">Summer 2026</p>
+    <h2 class="section-title">Register<br><span class="em">Your Player</span></h2>
+    <p style="color:rgba(255,255,255,0.55); font-size:16px; margin-top:-28px; margin-bottom:48px; max-width:600px;">Complete the form and click Submit. Coach McCall will receive your registration instantly. Then send your Zelle® payment to lock in your spot.</p>
+
+    <!-- Success screen -->
+    <div id="successScreen" class="form-shell" style="display:none; text-align:center; padding:72px 24px;">
+      <div style="font-size:64px; margin-bottom:20px;">🏀</div>
+      <h3 style="font-family:'Bebas Neue',sans-serif; font-size:50px; color:var(--gold-vivid); letter-spacing:0.04em; margin-bottom:12px; line-height:1;">Registration<br>Submitted!</h3>
+      <p style="font-size:16px; color:rgba(255,255,255,0.65); max-width:500px; margin:0 auto 28px; line-height:1.8;">Your registration has been sent directly to Coach McCall. Please complete your Zelle® payment to lock in your spot.</p>
+      <div style="background:rgba(26,77,46,0.4); border:1px solid rgba(200,148,26,0.3); border-radius:14px; padding:24px 36px; display:inline-block; margin-bottom:20px;">
+        <div style="font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:8px;">Send Zelle® Payment To</div>
+        <div style="font-family:'Bebas Neue',sans-serif; font-size:40px; color:var(--white); letter-spacing:0.04em;">(707) 696-3816</div>
+        <div style="font-size:13px; color:rgba(255,255,255,0.45); margin-top:6px;">Include player's full name in memo</div>
+      </div>
+      <p style="font-size:13px; color:rgba(255,255,255,0.35);">Questions? Call/text Coach McCall: (707) 696-3816</p>
+    </div>
+
+    <!-- Error banner -->
+    <div id="errorBanner" style="display:none; background:rgba(200,60,40,0.12); border:1px solid rgba(200,60,40,0.35); border-radius:10px; padding:16px 22px; margin-bottom:24px; color:rgba(255,200,180,0.9); font-size:14px; line-height:1.6;">
+      Something went wrong. Please try again or contact Coach McCall directly at (707) 696-3816.
+    </div>
+
+    <form class="form-shell" id="registrationForm">
+
+      <!-- PLAYER INFO -->
+      <div class="form-block">
+        <div class="form-block-title">🏀 Player Information</div>
+        <div class="form-row cols-2">
+          <div class="fg"><label>Player Full Name</label><input type="text" name="Player Name" placeholder="First and Last Name"></div>
+          <div class="fg"><label>Date of Birth</label><input type="date" name="Date of Birth"></div>
+        </div>
+        <div class="form-row cols-3">
+          <div class="fg"><label>Phone Number</label><input type="tel" name="Player Phone" placeholder="(707) 000-0000"></div>
+          <div class="fg"><label>School Name</label><input type="text" name="School" placeholder="Maria Carrillo High School"></div>
+          <div class="fg"><label>Grade (Fall 2026)</label>
+            <select name="Grade">
+              <option value="">Select Grade</option>
+              <option>Incoming 9th (Class of 2030)</option>
+              <option>10th Grade (Class of 2029)</option>
+              <option>11th Grade (Class of 2028)</option>
+              <option>12th Grade (Class of 2027)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row cols-3">
+          <div class="fg" style="grid-column:1/3"><label>Street Address</label><input type="text" name="Address" placeholder="Street Address"></div>
+          <div class="fg"><label>City</label><input type="text" name="City" placeholder="Santa Rosa"></div>
+        </div>
+        <div class="form-row cols-2">
+          <div class="fg"><label>Playing Position</label>
+            <select name="Position">
+              <option value="">Select Position</option>
+              <option>Point Guard (PG)</option>
+              <option>Shooting Guard (SG)</option>
+              <option>Small Forward (SF)</option>
+              <option>Power Forward (PF)</option>
+              <option>Center (C)</option>
+              <option>Multiple / Versatile</option>
+            </select>
+          </div>
+          <div class="fg"><label>Division</label>
+            <select name="Division">
+              <option value="">JV or Varsity?</option>
+              <option>Junior Varsity (JV)</option>
+              <option>Varsity</option>
+              <option>Unsure — Coach will determine</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- PARENT / GUARDIAN -->
+      <div class="form-block">
+        <div class="form-block-title">👨‍👩‍👧 Parent / Guardian Information</div>
+        <div class="form-row cols-2">
+          <div class="fg"><label>Parent / Guardian Name</label><input type="text" name="Guardian 1 Name" placeholder="Full Name"></div>
+          <div class="fg"><label>Email Address</label><input type="email" name="Guardian 1 Email" placeholder="email@example.com"></div>
+        </div>
+        <div class="form-row cols-2">
+          <div class="fg"><label>Second Parent / Guardian (optional)</label><input type="text" name="Guardian 2 Name" placeholder="Full Name"></div>
+          <div class="fg"><label>Email Address (optional)</label><input type="email" name="Guardian 2 Email" placeholder="email@example.com"></div>
+        </div>
+      </div>
+
+      <!-- EMERGENCY / MEDICAL -->
+      <div class="form-block">
+        <div class="form-block-title">🏥 Emergency &amp; Medical Information</div>
+        <div class="form-row cols-3">
+          <div class="fg"><label>Emergency Contact Name</label><input type="text" name="Emergency Contact Name" placeholder="Full Name"></div>
+          <div class="fg"><label>Emergency Contact Phone</label><input type="tel" name="Emergency Contact Phone" placeholder="(707) 000-0000"></div>
+          <div class="fg"><label>Relationship to Player</label><input type="text" name="Relationship to Player" placeholder="e.g. Parent, Aunt, Guardian"></div>
+        </div>
+        <div class="form-row cols-2">
+          <div class="fg"><label>Preferred Hospital</label><input type="text" name="Preferred Hospital" placeholder="Hospital Name"></div>
+          <div class="fg"><label>Primary Care Physician</label><input type="text" name="PCP Name" placeholder="Dr. Full Name"></div>
+        </div>
+        <div class="form-row cols-2">
+          <div class="fg"><label>PCP Phone Number</label><input type="tel" name="PCP Phone" placeholder="(707) 000-0000"></div>
+          <div class="fg"></div>
+        </div>
+        <div class="radio-row">
+          <p>Does your child have any medical conditions that might affect playing ability or endanger other participants?</p>
+          <div class="r-grp">
+            <label class="r-lbl"><input type="radio" name="Medical Conditions" value="No" checked> No</label>
+            <label class="r-lbl"><input type="radio" name="Medical Conditions" value="Yes"> Yes</label>
+          </div>
+        </div>
+        <div class="form-row cols-1" style="margin-top:14px;">
+          <div class="fg"><label>If YES — describe the condition</label><textarea name="Medical Details" rows="3" placeholder="Describe any relevant medical conditions, medications, or special needs..."></textarea></div>
+        </div>
+      </div>
+
+      <!-- PROGRAM FEE -->
+      <div class="form-block">
+        <div class="form-block-title">💰 Program Fee Selection</div>
+        <div class="fee-tier-selector">
+          <label class="fee-tier selected" onclick="selectTier(this)">
+            <input type="radio" name="Fee Selected" value="$250 — Standard (Clinic + SRJC League)" checked>
+            <div class="selected-check">✓</div>
+            <div class="tier-label">Standard Registration</div>
+            <div class="tier-amt">$250</div>
+            <div class="tier-desc">Skills Clinic + SRJC Summer League. Applies if not accepted into Chico State Tournament.</div>
+          </label>
+          <label class="fee-tier" onclick="selectTier(this)">
+            <input type="radio" name="Fee Selected" value="$350 — Chico Tournament (Clinic + League + Tournament)">
+            <div class="selected-check">✓</div>
+            <div class="tier-label">Chico Tournament Registration</div>
+            <div class="tier-amt">$350</div>
+            <div class="tier-desc">Clinic + League + Chico State Team Camp (June 12–14). Select if accepted into the tournament.</div>
+          </label>
+        </div>
+        <div class="zelle-box">
+          <span class="zelle-icon">💸</span>
+          <div>
+            <h4>Payment via Zelle®</h4>
+            <p>Send payment to <strong>(707) 696-3816</strong> — include your player's full name in the memo. Payment due at registration to hold your spot.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- WAIVER -->
+      <div class="form-block">
+        <div class="form-block-title">📄 Authorization &amp; Waiver</div>
+        <div class="waiver-block">
+          <p>In consideration of the acceptance of this application, I, for myself, my child/ward, all executors, and assignees, do hereby release and discharge Dave McCall and/or directors, facilities, volunteers, and employees, for all claims, demands, or causes of action arising out of participation in all training camp and summer basketball activities. I attest that I have full knowledge of the risks involved in strenuous athletic activity and that my child/ward is physically able to participate. I hereby authorize Dave McCall and associated staff to act for me according to their best judgment in any emergency requiring medical attention. I further agree to be responsible for any medical or other charges in connection with my child's/ward's participation in any event sponsored by Dave McCall.</p>
+          <label class="check-row">
+            <input type="checkbox" id="waiverCheck" name="Waiver Agreed" value="Yes — Agreed" checked>
+            <span>I have read, understand, and agree to the Authorization / Waiver of Liability above.</span>
+          </label>
+        </div>
+        <div class="form-row cols-2">
+          <div class="fg"><label>Parent / Guardian Signature (type full name)</label><input type="text" name="Signature 1" placeholder="Type Full Name as Signature"></div>
+          <div class="fg"><label>Date</label><input type="date" name="Signature 1 Date"></div>
+        </div>
+        <div class="form-row cols-2">
+          <div class="fg"><label>Second Signature (optional)</label><input type="text" name="Signature 2" placeholder="Type Full Name as Signature"></div>
+          <div class="fg"><label>Date</label><input type="date" name="Signature 2 Date"></div>
+        </div>
+        <div class="submit-row">
+          <div class="submit-note">
+            Questions? Contact Coach McCall:<br>
+            (707) 696-3816 &nbsp;·&nbsp; davemccall@sbcglobal.net
+          </div>
+          <button type="button" id="submitBtn" class="btn-submit" onclick="submitForm()">Submit Registration →</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-name">Coach McCall · Puma Basketball</div>
+      <p>Maria Carrillo High School · Santa Rosa, CA<br>Varsity Girls Basketball — Head Coach</p>
+    </div>
+    <div class="footer-contact">
+      <h4>Contact Coach McCall</h4>
+      <p>
+        davemccall@sbcglobal.net<br>
+        Cell: <a href="tel:7076963816">(707) 696-3816</a><br>
+        Zelle® Payments: <strong style="color:var(--gold-light)">(707) 696-3816</strong>
+      </p>
+    </div>
+    <div class="footer-contact">
+      <h4>Chico State Camp Contact</h4>
+      <p>
+        Annie Ward<br>
+        <a href="tel:9256582226">925-658-2226</a><br>
+        award21@csuchico.edu
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Dave McCall Basketball &middot; Maria Carrillo High School Women's Basketball &middot; Santa Rosa, CA
+  </div>
+</footer>
+
+<script>
+function selectTier(el) {
+  document.querySelectorAll('.fee-tier').forEach(t => t.classList.remove('selected'));
+  el.classList.add('selected');
+  el.querySelector('input[type="radio"]').checked = true;
+}
+
+async function submitForm() {
+  const waiver = document.getElementById('waiverCheck');
+  if (!waiver.checked) {
+    waiver.closest('.waiver-block').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    waiver.closest('.waiver-block').style.border = '2px solid #e05060';
+    setTimeout(() => waiver.closest('.waiver-block').style.border = '', 3000);
+    return;
+  }
+
+  const btn = document.getElementById('submitBtn');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  const form = document.getElementById('registrationForm');
+  const data = new FormData(form);
+
+  try {
+    const response = await fetch('https://formspree.io/f/mvzvykaw', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      form.style.display = 'none';
+      document.getElementById('successScreen').style.display = 'block';
+      document.getElementById('successScreen').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      throw new Error('Server error');
+    }
+  } catch (err) {
+    btn.textContent = 'Submit Registration →';
+    btn.disabled = false;
+    document.getElementById('errorBanner').style.display = 'block';
+    document.getElementById('errorBanner').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
+// Smooth nav scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+// Nav active highlight
+const sections = document.querySelectorAll('section[id]');
+const navLinks  = document.querySelectorAll('.nav-links a');
+new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(l => {
+        l.style.color = l.getAttribute('href') === '#' + entry.target.id ? 'var(--gold-light)' : '';
+      });
+    }
+  });
+}, { threshold: 0.4 }).observe && sections.forEach(s =>
+  new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) navLinks.forEach(l => {
+        l.style.color = l.getAttribute('href') === '#' + entry.target.id ? 'var(--gold-light)' : '';
+      });
+    });
+  }, { threshold: 0.4 }).observe(s)
+);
+</script>
+</body>
+</html>
